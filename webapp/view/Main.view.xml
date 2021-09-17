@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="caseone.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page
+					id="page"
+					title="{i18n>title}"
+				>
+					<content>
+						<FeedInput
+							post="onPost"
+							showIcon="false"
+							class="sapUiSmallMarginTopBottom"
+						/>
+						<List
+							showSeparators="Inner"
+							items="{objectsModel>/objects}"
+						>
+							<FeedListItem
+								sender="{objectsModel>Author}"
+								showIcon="false"
+								timestamp="{objectsModel>Date}"
+								text="{objectsModel>Text}"
+							/>
+						</List>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
